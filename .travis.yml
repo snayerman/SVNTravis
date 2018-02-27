@@ -1,7 +1,15 @@
 language: java
 
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: "snayerma-github"
+    token:
+      secure: "a8090c1974852c29a3f928c0232217018bbc3fed"
+
 jdk:
   - oraclejdk8
-  
+
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
